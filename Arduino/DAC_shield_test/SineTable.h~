@@ -1,0 +1,5 @@
+
+int SineTable( int rate, int *dat, int mdat);
+
+#define SAMP_US PERIOD_US
+

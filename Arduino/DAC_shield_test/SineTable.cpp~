@@ -1,0 +1,12 @@
+
+//
+// create a sine wave table
+// 
+// rate is the desired output rate in Hz
+// dat is buffer to store the samples
+// ndat is 
+#include "SineTable.h"
+
+int SineTable( int rate, int *dat, int mdat) {
+  
+}

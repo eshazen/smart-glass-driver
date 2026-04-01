@@ -1,0 +1,38 @@
+# smart-glass-driver
+
+This is a line-powered programmable function generator capable
+of generating an output of about 140V pk-pk on each of two outputs
+(which can be out of phase).
+
+Power supply current is limited to a few mA for safety.
+
+## 2026-03-31
+
+### Testing the commercial setup
+
+Made some measurements of the commercial driver with Weizhe.
+General observations:
+
+* Drive electronics supplied provides about 200V pk-pk AC
+two-phase at 60Hz.  Not quite sinusoidal.
+* Tested with 4.7k resistor in series.  Current waveform
+is roughly in phase with voltage.  Amplitude is about 2mA (absolute value).
+
+### Testing Amazon HV supply
+
+Now testing an HV supply I found in the box with the InTENS stuff.
+
+<img src="images/hv_supply_amazon.jpg" width=200>
+
+It claims to deliver up to 40W or 15mA.  
+
+* Test with 47k load.  Get a pretty nasty ripple of 20V @ 10Hz.
+* Test with 22k load.  Just as bad.
+
+Probably not worth considering using this thing.
+
+### Considering home-made supply
+
+We could build a nice +/-65V supply using a Triad N-68X transformer,
+bridge rectifier and an RC filter with zener regulator.
+

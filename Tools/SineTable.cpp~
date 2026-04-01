@@ -1,0 +1,94 @@
+#define TEST_MAIN
+
+#include "SineTable.h"
+#include "math.h"
+
+#ifdef TEST_MAIN
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main( int argc, char *argv[]) {
+  if( argc < 2) {
+    printf("Usage:  %s <rate> <nsamp>\n", argv[0]);
+    exit(1);
+  }
+
+  int rate = atoi( argv[1]);
+  int ns = atoi( argv[2]);
+
+  int *d = (int *)calloc( ns, sizeof(int));
+
+  int rc = SineTable( rate, d, ns);
+  if( rc > 0) {
+    for( int i=0; i<rc; i++)
+      printf("%d %d\n", i, d[i]);
+    for( int i=0; i<rc; i++)
+      printf("%d %d\n", i+rc, d[i]);
+  }
+}
+
+#define DEBUG
+
+
+#endif
+
+
+
+//
+// create a sine wave table
+// 
+// rate is the desired output rate in Hz
+// dat is buffer to store the samples
+// mdat is the maximum number of samples
+//
+// returns the actual number of samples or -1 on error
+//
+// expected to work only where the number of samples per cycle
+// is reasonable.
+//
+
+// calculate the theoretical number of samples in 1 period
+#define SAMP_PER_PERIOD ((1.0/rate)/(1e-6*PERIOD_US))
+
+int SineTable( int rate, int *dat, int mdat) {
+
+  static float a;
+  static float da;
+  static float ap;
+  static int rc;
+
+  a = 0;
+
+#ifdef DEBUG
+  printf("# rate=%d mdat=%d\n", rate, mdat);
+  printf("# SAMP_PER_PERIOD = %f\n", SAMP_PER_PERIOD);
+#endif  
+
+  if( SAMP_PER_PERIOD < 4)	// too fast
+    return -1;
+  if( SAMP_PER_PERIOD <= mdat) {	// one cycle fits
+    // calculate actual period
+    int nsamp = rc = int(SAMP_PER_PERIOD);
+    da = (2.0*M_PI)/nsamp;
+#ifdef DEBUG
+    printf("# ap=%f da=%f\n", ap, da);
+#endif    
+    int *pd = dat;
+    while( nsamp--) {
+#ifdef DEBUG
+      printf("# a = %f\n", a);
+#endif      
+      *pd++ = SIN_SCALE * sin(a) + SIN_OFFSET;
+      a += da;
+    }
+  } else {
+    rc = -1;
+  }
+  
+  return rc;
+}
+
+
+
+

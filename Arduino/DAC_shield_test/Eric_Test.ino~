@@ -1,0 +1,24 @@
+#define ADC_CS_PIN 10
+#define MCP_PORTS 4
+
+#include "MCP320x.h"
+#include <SPI.h>
+
+MCP320x ADC(ADC_CS_PIN);
+
+setup() {
+  Serial.begin(9600);
+  while(!Serial);
+}
+
+
+loop() {
+  for( uint8_t i=0; i<MCP_PORTS; i++) {
+    int val = ADC.readChannel(i);
+    Serial.print("CH");
+    Serial.print(i);
+    Serial.print(": ");
+    Serial.println( val);
+  }
+  delay(1000);
+}

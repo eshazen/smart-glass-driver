@@ -1,0 +1,61 @@
+//
+// Eric's ADC and DAC test code for Colorimeter
+// Main change is new ADC library which uses hardware SPI
+// (from https://github.com/Rom3oDelta7/MCP320X)
+//
+// This code works but LED output circuit has a very long
+// time constant filter, so delay for ~1s after changing DAC
+//
+
+// these are pinouts for analog shield on Arduino
+#define ADC_CS_PIN 10
+#define MCP_PORTS 2
+
+#define DAC_SDI 16
+#define DAC_SCK 15
+#define DAC_CS 9
+#define DAC_LDAC 7
+#define DAC_SHDN 6
+
+#include "MCP320x.h"
+#include "MCP4922.h"
+#include <SPI.h>
+
+MCP320x MYADC(ADC_CS_PIN);
+MCP4922 MYDAC( DAC_SDI, DAC_SCK, DAC_CS, DAC_LDAC);
+
+void read_ADC() {
+  for( uint8_t i=0; i<MCP_PORTS; i++) {
+    int val = MYADC.readChannel(i);
+    Serial.print(" ");
+    Serial.print( val);
+  }
+  Serial.println();
+}
+
+void setup() {
+  Serial.begin(9600);
+  while(!Serial);
+  SPI.begin();
+  pinMode( DAC_SHDN, OUTPUT);
+  digitalWrite( DAC_SHDN, HIGH);
+  Serial.println("DAC/ADC Test");
+}
+
+const int settl = 10;
+const int lo_dac = 0;
+const int hi_dac = 1000;
+const int step_dac = 100;
+
+void loop() {
+  // sweep DAC output ADC with dark
+  Serial.println("----");
+  for( int dac = lo_dac; dac <= hi_dac; dac += step_dac) {
+    Serial.print( dac);
+    Serial.print(": ");
+    MYDAC.Set( dac, 0);
+    delay(settl);
+    read_ADC();
+  }
+  delay(2000);
+}

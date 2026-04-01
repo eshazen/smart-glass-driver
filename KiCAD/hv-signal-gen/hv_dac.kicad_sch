@@ -1194,7 +1194,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 97.79) (xy 193.04 97.79)
+			(xy 184.15 97.79) (xy 214.63 97.79)
 		)
 		(stroke
 			(width 0)
@@ -1311,16 +1311,6 @@
 			(type default)
 		)
 		(uuid "4bc349b2-f694-4fe6-97fd-64a6b17d65b2")
-	)
-	(wire
-		(pts
-			(xy 200.66 97.79) (xy 214.63 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4d78993f-3120-4679-9eaa-626ed83f398a")
 	)
 	(wire
 		(pts
@@ -2727,76 +2717,6 @@
 				)
 				(path "/bd3461c6-98d5-44ba-aae5-a7d4c774348f/c6ed43be-e184-41ee-ae2b-489664e00d43"
 					(reference "#PWR08")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_US")
-		(at 196.85 97.79 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b9013adc-ed32-4c1b-9981-7a6001e5acc8")
-		(property "Reference" "R5"
-			(at 196.85 92.71 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "40kΩ"
-			(at 196.85 95.25 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
-			(at 197.104 96.774 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 196.85 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 196.85 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "586af7b8-02c0-43be-bb15-921f794c8b4e")
-		)
-		(pin "2"
-			(uuid "989e1026-a760-4c37-98a4-53bad3b9cf02")
-		)
-		(instances
-			(project "hv-signal-gen"
-				(path "/bd3461c6-98d5-44ba-aae5-a7d4c774348f/2a705cc3-c219-4e7d-8713-06178cfed8dd"
-					(reference "R13")
-					(unit 1)
-				)
-				(path "/bd3461c6-98d5-44ba-aae5-a7d4c774348f/c6ed43be-e184-41ee-ae2b-489664e00d43"
-					(reference "R5")
 					(unit 1)
 				)
 			)
