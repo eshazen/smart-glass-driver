@@ -29,6 +29,17 @@ would be about 6uS or a minimum cycle time of 12uS 80kHz so no problem
 reproducing a 1kHz output.  This is well matched to the 5us slew of
 the DAC.
 
+## 2026-04-02
+
+ECOs for "Eric's" board:
+
+*  Solder a wire between pins 1 and 6 of U1 (best done on the bottom side)
+This connects DAC reference to 5V
+*  Solder a wire between J4 pin 3 and J2 pin 5
+*  Solder a wire between J4 pin 4 and J2 pin 7.
+This connects the SPI data and clock to the right Arduino pins
+
+
 ## 2026-04-01
 
 Ordered parts to assemble a system based on a transformer-based zener supply
