@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "arduino-library")(type "KiCad")(uri "/home/hazen/work/arduino-kicad-library/symbols/arduino-library.kicad_sym")(options "")(descr ""))
+)

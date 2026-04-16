@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "my_transformer")(type "KiCad")(uri "${KIPRJMOD}/Transformer.pretty")(options "")(descr ""))
+)
