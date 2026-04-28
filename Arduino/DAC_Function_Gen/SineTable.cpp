@@ -40,6 +40,7 @@ int main( int argc, char *argv[]) {
 // create a sine wave table
 // 
 // rate is the desired output rate in Hz
+// scal is scale 0-2047
 // dat is buffer to store the samples
 // mdat is the maximum number of samples
 //
@@ -55,7 +56,7 @@ int main( int argc, char *argv[]) {
 // calculate the theoretical number of samples in 1 period
 #define SAMP_PER_PERIOD (CYCLE_PER/(1e-6*PERIOD_US))
 
-int SineTable( int rate, int *dat, int mdat) {
+int SineTable( int rate, int ampl, int *dat, int mdat) {
 
   static float ang;		// working angle 0-2*PI
   static float ang_step;		// angle step
@@ -84,7 +85,7 @@ int SineTable( int rate, int *dat, int mdat) {
 
     int *pd = dat;
     while( nsamp--) {
-      *pd++ = SIN_SCALE * sin(ang) + SIN_OFFSET;
+      *pd++ = ampl * sin(ang) + SIN_OFFSET;
       ang += ang_step;
     }
 
