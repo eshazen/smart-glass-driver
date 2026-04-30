@@ -1591,6 +1591,20 @@
 			(embedded_fonts no)
 		)
 	)
+	(arc
+		(start 38.1 88.646)
+		(mid 32.1032 86.4116)
+		(end 35.56 81.026)
+		(stroke
+			(width 1.27)
+			(type solid)
+			(color 39 97 255 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 70d74606-6a53-48d3-87ff-9f95da11287c)
+	)
 	(text "RED/BLK"
 		(exclude_from_sim no)
 		(at 84.582 43.688 0)
@@ -1683,7 +1697,7 @@
 	)
 	(text "L"
 		(exclude_from_sim no)
-		(at 25.4 79.756 0)
+		(at 59.69 86.614 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1942,7 +1956,7 @@
 	)
 	(polyline
 		(pts
-			(xy 24.13 81.28) (xy 33.02 81.28)
+			(xy 41.91 88.9) (xy 62.23 88.9)
 		)
 		(stroke
 			(width 1.27)
