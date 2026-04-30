@@ -4,10 +4,8 @@
 // Generate sine waves from 10-1000 Hz
 //
 // Commands:
-// h    - help
-// f <freq> <amp>
-//   <freq> is frequency in Hz.  Note that DAC is updated every 50us
-//   <amp> is amplitude 0-2047
+// h           - help
+// f frq amp   - run continuous frq in Hz, amplitude / 2047
 //
 
 // output pins for InTENS board with MCP4921
