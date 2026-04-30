@@ -2807,9 +2807,9 @@
 		)
 		(uuid "4768d73f-9164-4e8c-b8d2-40193bb06b85")
 	)
-	(text "For 2nd channel, cut long pin\non J4 pin 2 (U1 pin 2 connection)\n\nAdd wire from J4 pin 2 to J2 pin 8"
+	(text "For 2nd channel, cut or bend out long pin\non J4 pin 2 (U1 pin 2 connection)\n\nAdd wire from J4 pin 2 to J2 pin 8"
 		(exclude_from_sim no)
-		(at 59.69 126.492 0)
+		(at 55.372 128.524 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2850,6 +2850,17 @@
 			(justify left bottom)
 		)
 		(uuid "c364973a-9a67-4667-8185-a3a5c6c6cbdf")
+	)
+	(text "Green wire on\nboard#2 only"
+		(exclude_from_sim no)
+		(at 70.612 90.932 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "dd48650d-d147-4418-bb72-3351f8e81d14")
 	)
 	(junction
 		(at 133.35 71.12)
@@ -2898,6 +2909,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "67a0b39c-da62-4bd3-8d4d-4bd9b6bf12af")
+	)
+	(junction
+		(at 85.09 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6ba2f4fe-30a6-4977-a76a-3319b6e7b94c")
 	)
 	(junction
 		(at 166.37 71.12)
@@ -3057,7 +3074,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 100.33) (xy 95.25 100.33)
+			(xy 67.31 100.33) (xy 85.09 100.33)
 		)
 		(stroke
 			(width 0)
@@ -3310,6 +3327,17 @@
 	)
 	(wire
 		(pts
+			(xy 80.01 87.63) (xy 85.09 87.63)
+		)
+		(stroke
+			(width 0.635)
+			(type default)
+			(color 0 255 0 1)
+		)
+		(uuid "758124e1-9c0a-4b78-837e-c3b4e27597c0")
+	)
+	(wire
+		(pts
 			(xy 118.11 71.12) (xy 110.49 71.12)
 		)
 		(stroke
@@ -3317,6 +3345,17 @@
 			(type default)
 		)
 		(uuid "777c9c9d-279b-42e7-8e33-4a6f465699c8")
+	)
+	(wire
+		(pts
+			(xy 85.09 87.63) (xy 85.09 100.33)
+		)
+		(stroke
+			(width 0.635)
+			(type default)
+			(color 0 255 0 1)
+		)
+		(uuid "790d36c7-1ba6-4ebf-93ba-f6a799adab92")
 	)
 	(wire
 		(pts
@@ -3351,7 +3390,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 72.39) (xy 69.85 90.17)
+			(xy 68.58 72.39) (xy 68.58 90.17)
 		)
 		(stroke
 			(width 0)
@@ -3553,7 +3592,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 72.39) (xy 69.85 72.39)
+			(xy 67.31 72.39) (xy 68.58 72.39)
 		)
 		(stroke
 			(width 0)
@@ -3701,6 +3740,16 @@
 			(color 0 0 255 1)
 		)
 		(uuid "dd305a5b-4918-466d-b241-15f1bc8dff83")
+	)
+	(wire
+		(pts
+			(xy 85.09 100.33) (xy 95.25 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dea9dc9a-3d1c-42da-8085-a971402bcc6b")
 	)
 	(wire
 		(pts
@@ -4508,7 +4557,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 69.85 90.17 0)
+		(at 68.58 90.17 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4516,7 +4565,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000056d72a3d")
 		(property "Reference" "#PWR05"
-			(at 69.85 96.52 0)
+			(at 68.58 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4525,7 +4574,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 69.85 93.98 0)
+			(at 68.58 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4533,7 +4582,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 69.85 90.17 0)
+			(at 68.58 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4541,7 +4590,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 69.85 90.17 0)
+			(at 68.58 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4549,7 +4598,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 69.85 90.17 0)
+			(at 68.58 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
