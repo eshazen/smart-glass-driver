@@ -1,6 +1,7 @@
 /*******************************************************************************
 *  MCP4922.cpp - Library for driving MCP4922 2 channel DAC using hardware SPI. *
-* Created by Helge Nodland, January 1, 2015.								   *
+* Created by Helge Nodland, January 1, 2015.
+* 
 * Released into the public domain.                                             *
 *******************************************************************************/
 
